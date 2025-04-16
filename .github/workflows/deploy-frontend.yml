@@ -84,6 +84,7 @@ jobs:
       with:
         message: '[DEPLOY] Update Image ${{ env.FRONTEND_ECR_REPOSITORY }}:${{ needs.build.outputs.tag }}'
         branch: master
+        force: true
         github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Notice when job success
       if: success()
